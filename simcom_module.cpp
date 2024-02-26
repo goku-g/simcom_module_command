@@ -5,7 +5,7 @@
 // init simcom uart object
 SoftwareSerial SimCom(RX_PIN, TX_PIN);
 
-void SIMCOM::init(uint8_t rx, uint8_t tx, uint32_t baudrate)
+void SIMCOM::init(uint32_t baudrate)
 {
     Serial.println("SIMCOM Initializing...");
 
@@ -55,3 +55,8 @@ uint8_t SIMCOM::runATCommand(ATCommands command, uint32_t time_out)
     Serial.println(res_buf);
     return status;
 }
+
+/* Add functions definations here (replace function name with SIMCOM::<name>) */
+/* USER CODE START*/
+    
+/* USER CODE END*/

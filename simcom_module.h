@@ -15,15 +15,17 @@ enum ATCommands
     /* USER CODE END*/
 };
 
-namespace SIMCOM
+class SIMCOM
 {
-    void init(uint32_t baudrate);
+public:
+    SIMCOM(uint32_t baudrate, uint8_t rx_pin, uint8_t tx_pin);
     String UARTRead(uint32_t time_out);
     uint8_t runATCommand(ATCommands command, uint32_t time_out);
-    /* Add required functions here (only declearation)*/
-    /* USER CODE START*/
-        
-    /* USER CODE END*/
+
+private:
+    uint32_t _baudrate;
+    uint8_t _rx_pin;
+    uint8_t _tx_pin;
 };
 
 #endif

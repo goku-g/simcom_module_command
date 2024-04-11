@@ -3,11 +3,12 @@
 #include <SoftwareSerial.h>
 
 // init simcom uart object
-SoftwareSerial SimCom(RX_PIN, TX_PIN);
 
-void SIMCOM::init(uint32_t baudrate)
+void SIMCOM::SIMCOM(uint32_t baudrate, uint8_t rx_pin, uint8_t tx_pin)
 {
     Serial.println("SIMCOM Initializing...");
+    
+    SoftwareSerial SimCom(rx_pin, tx_pin);
 
     SimCom.begin(baudrate);
 }
